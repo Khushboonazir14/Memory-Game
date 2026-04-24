@@ -46,8 +46,6 @@ This project helped in understanding:
 * Add Timer
 * Add Move Counter
 * Add Best Score System
-* Add Sound Effects
-* Add Difficulty Levels
 
 ## Author
 
