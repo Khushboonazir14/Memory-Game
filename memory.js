@@ -1,5 +1,7 @@
-        const container = document.getElementById("container");
+       "use strict"
+       const container = document.getElementById("container");
         const resetBtn = document.getElementById("resetBtn");
+        const score = document.getElementById("move")
 
         const cards = [ "🍎", "🍎", "🍌", "🍌", "🥕", "🥕", "💸", "💸", "🍇", "🍇", "😀", "😀", "🍒", "🍒", "🥔", "🥔"
         ];
@@ -8,6 +10,7 @@
         let secondcard = null;
         let lock = false;
         let matchedCount = 0;
+        let moves = 0;
 
         function startGame() {
             container.innerHTML = "";
@@ -16,6 +19,7 @@
             secondcard = null;
             lock = false;
             matchedCount = 0;
+            moves = 0;
 
             cards.sort(() => Math.random() - 0.5);
 
@@ -38,7 +42,8 @@
                     }
 
                     secondcard = cardDiv;
-
+                    moves++;
+                    score.innerText ="Score:" + moves;
                     if (firstcard.dataset.value === secondcard.dataset.value) {
                         matchedCount += 2;
 
