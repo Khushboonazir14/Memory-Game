@@ -1,7 +1,7 @@
        "use strict"
        const container = document.getElementById("container");
         const resetBtn = document.getElementById("resetBtn");
-        const score = document.getElementById("move")
+        const attempt = document.getElementById("move");
 
         const cards = [ "🍎", "🍎", "🍌", "🍌", "🥕", "🥕", "💸", "💸", "🍇", "🍇", "😀", "😀", "🍒", "🍒", "🥔", "🥔"
         ];
@@ -22,7 +22,7 @@
             moves = 0;
 
             cards.sort(() => Math.random() - 0.5);
-
+ 
             cards.forEach(function (card) {
                 const cardDiv = document.createElement("div");
                 cardDiv.classList.add("card");
@@ -43,7 +43,7 @@
 
                     secondcard = cardDiv;
                     moves++;
-                    score.innerText ="Score:" + moves;
+                    attempt.innerText ="Attempts:" + moves;
                     if (firstcard.dataset.value === secondcard.dataset.value) {
                         matchedCount += 2;
 
